@@ -1,0 +1,16 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}Work Cafe Space{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{url_for('.static', filename='css/styles.css')}}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{{super()}}
+{% endblock %}
+{% block content %}
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1 class="display-4">Work Cafe Space</h1>
+    <p class="lead" >Explore cafes with perfect combination of amenities and ambiance to get your work done.</p>
+    <a class="btn btn-lg explore-cafe-button" href="{{ url_for('cafes') }}" role="button">Explore Cafes ☕️</a>
+  </div>
+</div>
+{% endblock %}

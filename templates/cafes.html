@@ -1,0 +1,48 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}Work Cafe Space{% endblock %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='css/styles.css')}}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="header-container">
+    <h1>
+      <a href="/">Work Cafe Space</a>
+      <a class="btn btn-lg explore-cafe-button" style="float: right;" href="{{ url_for('add_cafe') }}" role="button">Add
+        New Cafe</a>
+    </h1>
+  </div>
+  <div class="row cafe-card-container">
+    {% for row in cafes %}
+    <div class="card col-lg-4">
+      <div class="cafe-image">
+        <img src="{{row.img_url}}, " alt="{{row.name}}" style="width:100%">
+      </div>
+      <p style="font-weight: bold;">{{row.name}}</p>
+      <p><a href="{{row.map_url}}">🗺️</a>{{row.location}}</p>
+      <div class="details-row-container">
+        <span>{{row.seats}} Seats</span>
+        <span>{{row.coffee_price}} per coffee</span>
+      </div>
+      <div class="details-row-container">
+        <span>{% if row.has_toilet %}✓{% else %}ｘ{% endif %}Toilet </span>
+        <span>{% if row.has_wifi %}✓{% else %}ｘ{% endif %}Wifi </span>
+      </div>
+      <div class="details-row-container">
+        <span>{% if row.has_sockets %}✓{% else %}ｘ{% endif %}Socket </span>
+        <span>{% if row.can_take_calls %}✓{% else %}ｘ{% endif %}Calls Allowed </span>
+      </div>
+      <div class="incorrent-info-container">
+        <a type="button" class="btn btn-warning" role="button"
+          href="{{ url_for('update_cafe', cafe_id=row.id) }}">Update Info</a>
+        <a type="button" class="btn btn-danger" role="button" href="{{ url_for('delete_cafe', cafe_id=row.id) }}">Remove
+          Cafe</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

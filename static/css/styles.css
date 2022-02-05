@@ -1,0 +1,72 @@
+/* This CSS file will need to be added to the styling of 
+your web pages for the styles to be rendered. */
+
+body {
+background-image: url("../images/homepage.jpg") !important;
+background-size: cover;
+color: white;
+}
+
+a {
+    color: white;
+}
+
+/* Index page CSS */
+.jumbotron {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  color: rgb(255, 255, 255) !important;
+  background-image: url("../images/homepage.jpg") !important;
+  background-size: cover;
+}
+
+.explore-cafe-button{
+  background-color: grey;
+  color: white;
+}
+
+/* All Cafes Page */
+/* Header */
+.header-container{
+  margin-bottom: 20px;
+}
+
+/* Card CSS */
+.cafe-card-container{
+  margin: auto;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: center;
+  font-family: arial;
+  padding: 5px 15px;
+  margin: 5px 35px;
+  background-color: #DFDDC7;
+  color: black;
+  border-radius: 1.5rem;
+}
+
+.cafe-image{
+  width: 100%;
+  height: 250px !important;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+}
+
+.details-row-container{
+  display: flex; 
+  justify-content: space-between;
+  align-self: flex-start;
+  padding: 0 30px;
+}
+
+.incorrent-info-container{
+  display: flex; 
+  justify-content: space-between;
+  margin: 5px 10px;
+  color: white;
+}
